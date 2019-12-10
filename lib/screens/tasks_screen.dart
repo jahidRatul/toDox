@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:to_dox/widgets/tasks_list.dart';
 import 'package:to_dox/screens/add_task_screen.dart';
-import 'package:to_dox/models/task.dart';
 import 'package:provider/provider.dart';
 import 'package:to_dox/models/task_data.dart';
 
@@ -14,14 +13,7 @@ class TasksScreen extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddTaskScreen(
-              (newTaskTitle) {
-//                setState(() {
-//                  tasks.add(Task(name: newTaskTitle));
-//                });
-                Navigator.pop(context);
-              },
-            ),
+            builder: (context) => AddTaskScreen(),
           );
         },
         backgroundColor: Colors.cyan,
