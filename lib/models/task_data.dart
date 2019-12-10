@@ -4,9 +4,9 @@ import 'package:collection/collection.dart';
 
 class TaskData extends ChangeNotifier {
   List<Task> _tasks = [
-    Task(name: 'buy me choco'),
-    Task(name: 'buy me choco'),
-    Task(name: 'buy me choco'),
+    Task(name: 'buy a laptop'),
+    Task(name: 'go to book store'),
+    Task(name: 'feed the fish'),
   ];
 
   UnmodifiableListView<Task> get tasks {
@@ -24,6 +24,11 @@ class TaskData extends ChangeNotifier {
 
   void updateTask(Task task) {
     task.toggleDone();
+    notifyListeners();
+  }
+
+  void deleteTask(Task task) {
+    _tasks.remove(task);
     notifyListeners();
   }
 }

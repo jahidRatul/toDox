@@ -6,7 +6,7 @@ import 'package:to_dox/models/task_data.dart';
 class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String newTaskTitle;
+    String newTaskTitle = '';
 
     return Container(
       color: Color(0xff004c55),
