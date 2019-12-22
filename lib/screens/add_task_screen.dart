@@ -4,9 +4,10 @@ import 'package:provider/provider.dart';
 import 'package:to_dox/models/task_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
+  final titleController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    String newTaskTitle = '';
+//    String newTaskTitle = '';
 
     return Container(
       color: Color(0xff004c55),
@@ -33,9 +34,10 @@ class AddTaskScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
-              onChanged: (newText) {
-                newTaskTitle = newText;
-              },
+//              onChanged: (newText) {
+//                newTaskTitle = newText;
+//              },
+              controller: titleController,
             ),
             FlatButton(
               child: Text(
@@ -46,7 +48,7 @@ class AddTaskScreen extends StatelessWidget {
               ),
               color: Colors.lightBlue,
               onPressed: () {
-                Provider.of<TaskData>(context).addTask(newTaskTitle);
+                Provider.of<TaskData>(context).addTask(titleController.text);
                 Navigator.pop(context);
               },
             ),
